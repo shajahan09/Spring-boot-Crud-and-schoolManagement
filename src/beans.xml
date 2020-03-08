@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+    
+    <bean id="hello" class="com.mvc.Hello"  destroy-method="destroy" init-method="init">
+       
+    </bean>
+    <bean id="address1" class="com.mvc.Address">
+        <constructor-arg value="Dhaka" ></constructor-arg>
+        <constructor-arg value="Noakhali" ></constructor-arg>
+    </bean>
+    <bean id="address2" class="com.mvc.Address">
+         
+        <constructor-arg value="Chittagong" ></constructor-arg>
+        <constructor-arg value="Noakhali" ></constructor-arg>
+    </bean>
+    <bean id="e" class="com.mvc.Employee">
+        <property name="address1" ref="address1"/>
+        
+    </bean>
+    <bean id="e2" class="com.mvc.Employee" parent="e">
+        
+        <property name="address2" ref="address2"/>
+        
+    </bean>
+
+</beans>
+
+
